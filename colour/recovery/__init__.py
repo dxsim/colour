@@ -22,13 +22,17 @@ from .datasets import *  # noqa
 from . import datasets
 from .meng2015 import XYZ_to_sd_Meng2015
 from .smits1999 import RGB_to_sd_Smits1999
-from .jakob2019 import RGB_to_sd_Jakob2019, Jakob2019Interpolator
+from .jakob2019 import (sd_Jakob2019, find_coefficients_Jakob2019,
+                        RGB_to_sd_Jakob2019, Jakob2019Interpolator)
 
 __all__ = []
 __all__ += datasets.__all__
 __all__ += ['XYZ_to_sd_Meng2015']
 __all__ += ['RGB_to_sd_Smits1999']
-__all__ += ['RGB_to_sd_Jakob2019', 'Jakob2019Interpolator']
+__all__ += [
+    'sd_Jakob2019', 'find_coefficients_Jakob2019', 'RGB_to_sd_Jakob2019',
+    'Jakob2019Interpolator'
+]
 
 XYZ_TO_SD_METHODS = CaseInsensitiveMapping({
     'Meng 2015': XYZ_to_sd_Meng2015,
